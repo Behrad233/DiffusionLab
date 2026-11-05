@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Diffusion Solver</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="w">
+<h1>Diffusion <b>Solver</b></h1>
+
+<h2>Material Database</h2>
+<div class="db-box">
+    <div class="f" style="margin-bottom:10px">
+        <label for="dbSelect">Select Alloy / System</label>
+        <select id="dbSelect"><option value="">-- Choose a system --</option></select>
+    </div>
+    <div class="f">
+        <label for="dbTemp">Temperature (°C) <i>for D calc</i></label>
+        <input id="dbTemp" type="number" value="1000">
+    </div>
+    <div id="dbInfo"></div>
+</div>
+
+<h2>Fick's 2nd Law Calculator</h2>
+<div class="tip"><span>Leave <b>one</b> field empty →</span><button type="button" id="ex">example</button></div>
+<div class="g">
+<div class="f"><label for="c0">C0<i>wt%</i></label><input id="c0" type="text" inputmode="decimal" placeholder="0.25"></div>
+<div class="f"><label for="cs">Cs<i>wt%</i></label><input id="cs" type="text" inputmode="decimal" placeholder="1.20"></div>
+<div class="f"><label for="cx">Cx<i>wt%</i></label><input id="cx" type="text" inputmode="decimal" placeholder="0.80"></div>
+<div class="f"><label for="x">x<i>mm</i></label><input id="x" type="text" inputmode="decimal" placeholder="0.50"></div>
+<div class="f"><label for="d">D<i>m²/s</i></label><input id="d" type="text" inputmode="decimal" placeholder="1.6e-11"></div>
+<div class="f"><label for="t">t<i>hour</i></label><input id="t" type="text" inputmode="decimal" placeholder="—"></div>
+</div>
+<div class="act"><button id="go" type="button">محاسبه / Calculate</button><button id="cl" type="button">Clear</button></div>
+<div id="out" hidden></div>
+
+<button id="tb" type="button">▸ Show erf(z) Table</button>
+<div id="tw" hidden><table><thead><tr><th>z</th><th>erf(z)</th><th>1−erf(z)</th></tr></thead><tbody id="tbody"></tbody></table></div>
+
+<footer><span class="ln"></span><div class="sg">Made by <b>Behrad Mahbobi</b></div><div class="su">Metallurgy &amp; Materials Eng.</div></footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
